@@ -70,17 +70,20 @@ CREATE TABLE IF NOT EXISTS `lookups` (
   `lastUpdatedOn` datetime DEFAULT NULL,
   `lastUpdatedBy` int(11) DEFAULT NULL,
   PRIMARY KEY (`lookupId`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=greek;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.lookups: ~6 rows (approximately)
+-- Dumping data for table bgcms.lookups: ~9 rows (approximately)
 /*!40000 ALTER TABLE `lookups` DISABLE KEYS */;
 INSERT INTO `lookups` (`lookupId`, `typeId`, `subTypeId`, `selectable`, `parentId`, `description`, `createdOn`, `createdBy`, `lastUpdatedOn`, `lastUpdatedBy`) VALUES
-	(3, 2, 0, 1, 0, 'ADMINS', '2014-05-07 16:28:37', 1, NULL, NULL),
-	(4, 13, 0, 1, 0, 'PAGE', '2014-05-07 16:29:22', 1, NULL, NULL),
-	(5, 13, 0, 1, 0, 'ARTICLE', '2014-05-07 16:29:31', 1, NULL, NULL),
-	(19, 2, 0, 1, 0, 'CUSTOMERS', '2014-05-07 23:10:08', 1, NULL, NULL),
-	(20, 2, 0, 1, 0, 'USERS', '2014-05-07 23:10:28', 1, NULL, NULL),
-	(21, 2, 0, 1, 0, 'AUTHORS', '2014-05-07 23:10:39', 1, NULL, NULL);
+	(22, 2, 0, 1, 0, 'ADMIN', NULL, NULL, NULL, NULL),
+	(23, 2, 0, 1, 0, 'EDITOR', NULL, NULL, NULL, NULL),
+	(24, 2, 0, 1, 0, 'AUTHOR', NULL, NULL, NULL, NULL),
+	(25, 2, 0, 1, 0, 'CUSTOMER', NULL, NULL, NULL, NULL),
+	(26, 13, 0, 1, 0, 'PAGE', NULL, NULL, NULL, NULL),
+	(27, 13, 0, 1, 0, 'ARTICLE', NULL, NULL, NULL, NULL),
+	(28, 14, 0, 1, 0, 'HOME', NULL, NULL, NULL, NULL),
+	(29, 14, 0, 1, 0, 'CONTACT', NULL, NULL, NULL, NULL),
+	(30, 14, 0, 1, 0, 'PRODUCT', NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `lookups` ENABLE KEYS */;
 
 
@@ -91,23 +94,22 @@ CREATE TABLE IF NOT EXISTS `lookuptypes` (
   `description` varchar(255) NOT NULL DEFAULT '0',
   `attribute` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`lookupTypeId`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=greek;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.lookuptypes: ~12 rows (approximately)
+-- Dumping data for table bgcms.lookuptypes: ~11 rows (approximately)
 /*!40000 ALTER TABLE `lookuptypes` DISABLE KEYS */;
 INSERT INTO `lookuptypes` (`lookupTypeId`, `editable`, `description`, `attribute`) VALUES
 	(2, 0, 'USER_GROUPS', 'USER_GROUPS'),
 	(3, 1, 'CITIES', 'CITIES'),
 	(4, 1, 'STATES', 'STATES'),
 	(5, 1, 'COUNTRIES', 'COUNTRIES'),
-	(6, 1, 'PRODUCT_TAGS', 'PRODUCT_TAGS'),
 	(7, 1, 'ARTICLE_CATEGORIES', 'ARTICLE_CATEGORIES'),
 	(8, 1, 'ADDRESS_TYPES', 'ADDRESS_TYPES'),
 	(9, 1, 'TELEPHONE_TYPES', 'TELEPHONE_TYPES'),
-	(10, 1, 'MANUFACTURERS', 'MANUFACTURERS'),
 	(11, 1, 'WEBPROFILE_TYPES', 'WEBPROFILE_TYPES'),
-	(12, 1, 'PERSONID_TYPES', 'PERSONID_TYPES'),
-	(13, 0, 'CONTENT_TYPES', 'CONTENT_TYPES');
+	(12, 1, 'IDENTITY_TYPES', 'IDENTITY_TYPES'),
+	(13, 0, 'PAGE_TYPES', 'PAGE_TYPES'),
+	(14, 0, 'PAGE_SUBTYPES', 'PAGE_SUBTYPES');
 /*!40000 ALTER TABLE `lookuptypes` ENABLE KEYS */;
 
 
@@ -118,7 +120,10 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `typeId` int(11) NOT NULL DEFAULT '0',
   `subTypeId` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
+  `subtitle` varchar(255) NOT NULL,
   `body` longtext NOT NULL,
+  `price` float NOT NULL,
+  `quantity` int(11) NOT NULL,
   `createdOn` datetime DEFAULT NULL,
   `createdBy` int(11) DEFAULT NULL,
   `lastUpdatedOn` datetime DEFAULT NULL,
@@ -142,11 +147,8 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.sessions: ~2 rows (approximately)
+-- Dumping data for table bgcms.sessions: ~0 rows (approximately)
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-	('8c630a6e99600121820c1312aedec515', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36', 1401805338, ''),
-	('a257259a22bd6564acf3e28be0a3a333', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36', 1401968302, 'a:1:{s:9:"user_data";s:0:"";}');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
 
