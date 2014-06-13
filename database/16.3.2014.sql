@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `identities` (
 CREATE TABLE IF NOT EXISTS `lookups` (
   `lookupId` int(11) NOT NULL AUTO_INCREMENT,
   `typeId` int(11) NOT NULL DEFAULT '0',
+  `subTypeId` int(11) NOT NULL DEFAULT '0',
   `selectable` tinyint(4) NOT NULL DEFAULT '0',
   `parentId` tinyint(4) NOT NULL DEFAULT '0',
   `description` varchar(255) NOT NULL DEFAULT '0',
@@ -73,13 +74,13 @@ CREATE TABLE IF NOT EXISTS `lookups` (
 
 -- Dumping data for table bgcms.lookups: ~6 rows (approximately)
 /*!40000 ALTER TABLE `lookups` DISABLE KEYS */;
-INSERT INTO `lookups` (`lookupId`, `typeId`, `selectable`, `parentId`, `description`, `createdOn`, `createdBy`, `lastUpdatedOn`, `lastUpdatedBy`) VALUES
-	(3, 2, 1, 0, 'ADMINS', '2014-05-07 16:28:37', 1, NULL, NULL),
-	(4, 13, 1, 0, 'PAGE', '2014-05-07 16:29:22', 1, NULL, NULL),
-	(5, 13, 1, 0, 'ARTICLE', '2014-05-07 16:29:31', 1, NULL, NULL),
-	(19, 2, 1, 0, 'CUSTOMERS', '2014-05-07 23:10:08', 1, NULL, NULL),
-	(20, 2, 1, 0, 'USERS', '2014-05-07 23:10:28', 1, NULL, NULL),
-	(21, 2, 1, 0, 'AUTHORS', '2014-05-07 23:10:39', 1, NULL, NULL);
+INSERT INTO `lookups` (`lookupId`, `typeId`, `subTypeId`, `selectable`, `parentId`, `description`, `createdOn`, `createdBy`, `lastUpdatedOn`, `lastUpdatedBy`) VALUES
+	(3, 2, 0, 1, 0, 'ADMINS', '2014-05-07 16:28:37', 1, NULL, NULL),
+	(4, 13, 0, 1, 0, 'PAGE', '2014-05-07 16:29:22', 1, NULL, NULL),
+	(5, 13, 0, 1, 0, 'ARTICLE', '2014-05-07 16:29:31', 1, NULL, NULL),
+	(19, 2, 0, 1, 0, 'CUSTOMERS', '2014-05-07 23:10:08', 1, NULL, NULL),
+	(20, 2, 0, 1, 0, 'USERS', '2014-05-07 23:10:28', 1, NULL, NULL),
+	(21, 2, 0, 1, 0, 'AUTHORS', '2014-05-07 23:10:39', 1, NULL, NULL);
 /*!40000 ALTER TABLE `lookups` ENABLE KEYS */;
 
 
@@ -110,29 +111,12 @@ INSERT INTO `lookuptypes` (`lookupTypeId`, `editable`, `description`, `attribute
 /*!40000 ALTER TABLE `lookuptypes` ENABLE KEYS */;
 
 
--- Dumping structure for table bgcms.menus
-CREATE TABLE IF NOT EXISTS `menus` (
-  `menuId` int(11) NOT NULL AUTO_INCREMENT,
-  `contentId` int(11) NOT NULL DEFAULT '0',
-  `text` varchar(255) NOT NULL,
-  `createdOn` datetime DEFAULT NULL,
-  `createdBy` int(11) DEFAULT NULL,
-  `lastUpdatedOn` datetime DEFAULT NULL,
-  `lastUpdatedBy` int(11) DEFAULT NULL,
-  PRIMARY KEY (`menuId`)
-) ENGINE=InnoDB DEFAULT CHARSET=greek;
-
--- Dumping data for table bgcms.menus: ~0 rows (approximately)
-/*!40000 ALTER TABLE `menus` DISABLE KEYS */;
-/*!40000 ALTER TABLE `menus` ENABLE KEYS */;
-
-
 -- Dumping structure for table bgcms.pages
 CREATE TABLE IF NOT EXISTS `pages` (
   `pageId` int(11) NOT NULL AUTO_INCREMENT,
   `categoryId` int(11) NOT NULL DEFAULT '0',
   `typeId` int(11) NOT NULL DEFAULT '0',
-  `basic` tinyint(4) NOT NULL DEFAULT '0',
+  `subTypeId` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `body` longtext NOT NULL,
   `createdOn` datetime DEFAULT NULL,
