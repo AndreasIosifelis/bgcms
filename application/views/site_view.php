@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MZ">
+<html ng-app="CMS">
     <head>
         <meta charset="utf-8">
         <title>JS Bin</title>

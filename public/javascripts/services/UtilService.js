@@ -1,4 +1,4 @@
-MZ.factory("$util", [function() {
+CMS.factory("$util", [function() {
 
         return {
             hash: function(m, v) {

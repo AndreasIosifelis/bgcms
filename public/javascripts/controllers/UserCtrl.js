@@ -1,4 +1,4 @@
-MZ.controller("UserCtrl", ['$location', '$routeParams','$util','$api','$user','$rootScope','$scope', function($location, $routeParams, $util, $api, $user, $rootScope, $scope){       
+CMS.controller("UserCtrl", ['$location', '$routeParams','$util','$api','$user','$rootScope','$scope', function($location, $routeParams, $util, $api, $user, $rootScope, $scope){       
 
        $scope.success = false;
        $scope.errors = [];

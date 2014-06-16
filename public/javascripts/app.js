@@ -1,13 +1,13 @@
-var MZdeps = [
+var CMSdeps = [
     'ngRoute'
 ],
-        MZ = angular.module("MZ", MZdeps);
+        CMS = angular.module("CMS", CMSdeps);
 
-MZ.config(['$routeProvider', function($routeProvider) {
+CMS.config(['$routeProvider', function($routeProvider) {
 
         $routeProvider.
-                when("/", {templateUrl: "public/templates/page/page.html"}).
-                when("/page/:page", {templateUrl: "public/templates/page/page.html"}).
+                when("/", {templateUrl: "public/templates/page/view.html"}).
+                when("/page/:page", {templateUrl: "public/templates/page/view.html"}).
                 when("/blog", {templateUrl: "public/templates/blog/list.html"}).
                 when("/user/login", {templateUrl: "public/templates/user/login.html"}).
                 when("/products", {templateUrl: "public/templates/product/list.html"}).

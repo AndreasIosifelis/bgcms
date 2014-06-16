@@ -1,7 +1,7 @@
-MZ.factory('$localizer', ['$rootScope', function($rootScope){
+CMS.factory('$localizer', ['$rootScope', function($rootScope){
     
     
-    $rootScope.langId = "gr";
+    $rootScope.langId = "en";
     
     var en = {
         LOGIN : "Login",

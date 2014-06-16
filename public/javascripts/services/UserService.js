@@ -1,4 +1,4 @@
-MZ.factory("$user", ['$rootScope','$localizer', function($rootScope, $localizer){
+CMS.factory("$user", ['$rootScope','$localizer', function($rootScope, $localizer){
         
         //$rootScope.isLoggedIn = parseInt($("#ApplicationLoggedIn").val());
         //$rootScope.isAdmin = parseInt($("#ApplicationIsAdmin").val());

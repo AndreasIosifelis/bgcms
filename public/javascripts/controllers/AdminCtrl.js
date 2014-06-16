@@ -1,4 +1,4 @@
-MZ.controller("AdminCtrl", ['$rootScope',function($rootScope){
+CMS.controller("AdminCtrl", ['$rootScope',function($rootScope){
     
 }]);
 

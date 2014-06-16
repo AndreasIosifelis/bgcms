@@ -1,4 +1,4 @@
-MZ.controller("PageCtrl", ['$api', '$scope', '$rootScope', '$routeParams', function($api, $scope, $rootScope, $routeParams) {
+CMS.controller("PageCtrl", ['$api', '$scope', '$rootScope', '$routeParams', function($api, $scope, $rootScope, $routeParams) {
 
         
         var data ={

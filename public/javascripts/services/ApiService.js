@@ -1,4 +1,4 @@
-MZ.factory("$api", ["$util", "$http", "$rootScope", function($util, $http, $rootScope){
+CMS.factory("$api", ["$util", "$http", "$rootScope", function($util, $http, $rootScope){
     
     $rootScope.$on("LOAD", function(){ $rootScope.loading=true });
     $rootScope.$on("UNLOAD", function(){ $rootScope.loading=false });

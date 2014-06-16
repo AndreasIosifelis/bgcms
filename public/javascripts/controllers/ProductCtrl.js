@@ -1,4 +1,4 @@
-MZ.controller("ProductCtrl", ['$scope', '$rootScope', '$routeParams', function($scope, $rootScope, $routeParams){
+CMS.controller("ProductCtrl", ['$scope', '$rootScope', '$routeParams', function($scope, $rootScope, $routeParams){
         
        $rootScope.selectedPage = "product";
        
