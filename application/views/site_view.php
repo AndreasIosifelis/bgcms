@@ -2,7 +2,7 @@
 <html ng-app="CMS">
     <head>
         <meta charset="utf-8">
-        <title>JS Bin</title>
+        <title>{{pageTitle}}</title>
         <!-- Styles -->
         <?= css(base_url("public/stylesheets/bootstrap.min.css")) ?>
         <?= css(base_url("public/stylesheets/bootstrap-theme.min.css")) ?>
