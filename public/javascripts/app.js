@@ -4,4 +4,11 @@
  * and open the template in the editor.
  */
 
+var CMS = angular.module("CMS", ["ngRoute"]);
+
+CMS.config(function(){
+    
+    
+});
+
 
