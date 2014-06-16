@@ -17,7 +17,7 @@ if (!defined('BASEPATH'))
   | path to your installation.
   |
  */
-$config['base_url'] = 'http://localhost:'.$_SERVER['SERVER_PORT'].'/ngmagazaki/';
+$config['base_url'] = 'http://localhost:'.$_SERVER['SERVER_PORT'].'/bgcms/';
 
 /*
   |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ $config['enable_hooks'] = FALSE;
   | http://codeigniter.com/user_guide/general/creating_libraries.html
   |
  */
-$config['subclass_prefix'] = 'MZ_';
+$config['subclass_prefix'] = 'CMS_';
 
 
 /*

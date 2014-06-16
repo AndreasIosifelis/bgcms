@@ -1,12 +1,9 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-function loadMin(){
-    return ENVIRONMENT == "development" ? ".js" : ".min.js";
+function css($path) {
+    return "<link rel='stylesheet' type='text/css' href='{$path}' />";
 }
 
+function js($path) {
+    return "<script type='text/javascript' src='{$path}'></script>";
+}
