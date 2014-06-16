@@ -17,7 +17,7 @@ if (!defined('BASEPATH'))
   | path to your installation.
   |
  */
-$config['base_url'] = 'http://localhost:' . $_SERVER['SERVER_PORT'] . '/bgcms/';
+$config['base_url'] = 'http://localhost:'.$_SERVER['SERVER_PORT'].'/ngmagazaki/';
 
 /*
   |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ $config['enable_hooks'] = FALSE;
   | http://codeigniter.com/user_guide/general/creating_libraries.html
   |
  */
-$config['subclass_prefix'] = 'CMS_';
+$config['subclass_prefix'] = 'MZ_';
 
 
 /*
@@ -227,7 +227,7 @@ $config['cache_path'] = '';
   | MUST set an encryption key.  See the user guide for info.
   |
  */
-$config['encryption_key'] = '-scJ<Z9cU4:fy9YW~mdByIxX:fw=1RN9+Nccv3a*%(;*$?S H;wqV|-#C.6m[[As';
+$config['encryption_key'] = '2K+NXfw9QLFKs23V11vm~c=IuKViu*1bYi^*YAFJ B-evkrs76fF6^q_Trxj';
 
 /*
   |--------------------------------------------------------------------------
@@ -247,7 +247,7 @@ $config['encryption_key'] = '-scJ<Z9cU4:fy9YW~mdByIxX:fw=1RN9+Nccv3a*%(;*$?S H;w
   | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
   |
  */
-$config['sess_cookie_name'] = 'cms_session';
+$config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
 $config['sess_expire_on_close'] = FALSE;
 $config['sess_encrypt_cookie'] = FALSE;

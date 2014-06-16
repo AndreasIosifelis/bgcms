@@ -1,0 +1,45 @@
+<div class="row" ng-controller="UserCtrl">
+    <div class="col-md-6 col-md-offset-3">
+        <h4>{{LOGIN}}</h4>
+        <form role="form" ng-submit="doLogin()" name="loginForm">
+            <div class="form-group">
+                <label for="loginUsername">{{USERNAME}}</label>
+                <input 
+                    type="text" 
+                    name="loginUsername" 
+                    class="form-control" 
+                    id="loginUsername" 
+                    ng-model="loginUsername"
+                    ng-maxlength="15"
+                    ng-minlength="8"
+                    placeholder="{{USERNAME}}" 
+                    required
+                    autocomplete="off">
+                <p ng-show="loginForm.loginUsername.$dirty && loginForm.loginUsername.$error.required">Required</p>
+                <p ng-show="loginForm.loginUsername.$dirty && loginForm.loginUsername.$error.maxlength">Too long</p>
+                <p ng-show="loginForm.loginUsername.$dirty && loginForm.loginUsername.$error.minlength">Too sort</p>
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">{{PASSWORD}}</label>
+                <input 
+                    type="password" 
+                    name="loginPassword" 
+                    class="form-control" 
+                    ng-model="loginPassword" 
+                    ng-maxlength="15"
+                    ng-minlength="8"
+                    id="loginPassword" 
+                    required
+                    placeholder="{{PASSWORD}}">
+                <p ng-show="loginForm.loginPassword.$dirty && loginForm.loginPassword.$error.required">Required</p>
+                <p ng-show="loginForm.loginPassword.$dirty && loginForm.loginPassword.$error.maxlength">Too long</p>
+                <p ng-show="loginForm.loginPassword.$dirty && loginForm.loginPassword.$error.minlength">Too sort</p>                
+            </div>
+            <!--<button type="submit" class="btn btn-info" disabled="loginForm.$invalid">{{LOGIN}}</button>-->
+            <input type="submit" class="btn btn-info" ng-disabled="loginForm.$invalid" value="{{LOGIN}}" />
+        </form>
+        <ul>
+            <li ng-repeat="message in messages">{{message}}</li>
+        </ul>
+    </div>
+</div>

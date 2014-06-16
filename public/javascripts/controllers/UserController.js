@@ -1,7 +1,5 @@
-CMS.controller("UserController", ["$scope", "$rootScope", function($scope, $rootScope) {
+CMS.controller("UserController", function($scope, $rootScope) {
 
-        if ($rootScope.userInfo.loggedIn) {
+console.log($rootScope);
 
-        }
-
-    }]);
+    });

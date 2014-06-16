@@ -1,14 +1,22 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+var MZdeps = [
+    'ngRoute'
+],
+        MZ = angular.module("MZ", MZdeps);
 
-var CMS = angular.module("CMS", ["ngRoute"]);
+MZ.config(['$routeProvider', function($routeProvider) {
 
-CMS.config(function(){
-    
-    
-});
+        $routeProvider.
+                when("/", {templateUrl: "public/templates/page/page.html"}).
+                when("/page/:page", {templateUrl: "public/templates/page/page.html"}).
+                when("/blog", {templateUrl: "public/templates/blog/list.html"}).
+                when("/user/login", {templateUrl: "public/templates/user/login.html"}).
+                when("/products", {templateUrl: "public/templates/product/list.html"}).
+                when("/products/:id", {templateUrl: "public/templates/product/list.html"}).
+                //Admin
+                when("/admin/panel", {templateUrl: "public/templates/admin/panel.html"}).
+                //Admin
+                otherwise({redirectTo: "/"});
+
+    }]);
 
 
