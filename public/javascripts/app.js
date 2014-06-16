@@ -6,7 +6,7 @@ var CMSdeps = [
 CMS.config(['$routeProvider', function($routeProvider) {
 
         $routeProvider.
-                when("/", {templateUrl: "public/templates/page/view.html"}).
+                when("/", {templateUrl: "public/templates/page/home.html"}).
                 when("/page/:page", {templateUrl: "public/templates/page/view.html"}).
                 when("/blog", {templateUrl: "public/templates/blog/list.html"}).
                 when("/user/login", {templateUrl: "public/templates/user/login.html"}).

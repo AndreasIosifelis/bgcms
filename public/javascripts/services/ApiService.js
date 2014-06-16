@@ -16,7 +16,7 @@ CMS.factory("$api", ["$util", "$http", "$rootScope", function($util, $http, $roo
             path = path.replace(/{ctrl}/, url[0]);
             path = path.replace(/{fnc}/, url[1]);
 
-            params["sessionId"] = $("#ApplicationSessionId").val();
+            params["sessionId"] = $rootScope.userInfo.sessionId;
             params["userToken"] = $util.isEmpty($rootScope.userInfo.userToken) ? "" : $rootScope.userInfo.userToken;
             
              $rootScope.$emit('LOAD');
