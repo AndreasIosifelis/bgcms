@@ -70,9 +70,9 @@ CREATE TABLE IF NOT EXISTS `lookups` (
   `lastUpdatedOn` datetime DEFAULT NULL,
   `lastUpdatedBy` int(11) DEFAULT NULL,
   PRIMARY KEY (`lookupId`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=greek;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.lookups: ~9 rows (approximately)
+-- Dumping data for table bgcms.lookups: ~6 rows (approximately)
 /*!40000 ALTER TABLE `lookups` DISABLE KEYS */;
 INSERT INTO `lookups` (`lookupId`, `typeId`, `subTypeId`, `selectable`, `parentId`, `description`, `createdOn`, `createdBy`, `lastUpdatedOn`, `lastUpdatedBy`) VALUES
 	(22, 2, 0, 1, 0, 'ADMIN', NULL, NULL, NULL, NULL),
@@ -81,9 +81,9 @@ INSERT INTO `lookups` (`lookupId`, `typeId`, `subTypeId`, `selectable`, `parentI
 	(25, 2, 0, 1, 0, 'CUSTOMER', NULL, NULL, NULL, NULL),
 	(26, 13, 0, 1, 0, 'PAGE', NULL, NULL, NULL, NULL),
 	(27, 13, 0, 1, 0, 'ARTICLE', NULL, NULL, NULL, NULL),
-	(28, 14, 0, 1, 0, 'HOME', NULL, NULL, NULL, NULL),
-	(29, 14, 0, 1, 0, 'CONTACT', NULL, NULL, NULL, NULL),
-	(30, 14, 0, 1, 0, 'PRODUCT', NULL, NULL, NULL, NULL);
+	(31, 13, 0, 1, 0, 'HOME_PAGE', NULL, NULL, NULL, NULL),
+	(32, 13, 0, 1, 0, 'CONTACT_PAGE', NULL, NULL, NULL, NULL),
+	(33, 13, 0, 1, 0, 'PRODUCT_PAGE', NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `lookups` ENABLE KEYS */;
 
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `lookuptypes` (
   PRIMARY KEY (`lookupTypeId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.lookuptypes: ~11 rows (approximately)
+-- Dumping data for table bgcms.lookuptypes: ~10 rows (approximately)
 /*!40000 ALTER TABLE `lookuptypes` DISABLE KEYS */;
 INSERT INTO `lookuptypes` (`lookupTypeId`, `editable`, `description`, `attribute`) VALUES
 	(2, 0, 'USER_GROUPS', 'USER_GROUPS'),
@@ -108,8 +108,7 @@ INSERT INTO `lookuptypes` (`lookupTypeId`, `editable`, `description`, `attribute
 	(9, 1, 'TELEPHONE_TYPES', 'TELEPHONE_TYPES'),
 	(11, 1, 'WEBPROFILE_TYPES', 'WEBPROFILE_TYPES'),
 	(12, 1, 'IDENTITY_TYPES', 'IDENTITY_TYPES'),
-	(13, 0, 'PAGE_TYPES', 'PAGE_TYPES'),
-	(14, 0, 'PAGE_SUBTYPES', 'PAGE_SUBTYPES');
+	(13, 0, 'PAGE_TYPES', 'PAGE_TYPES');
 /*!40000 ALTER TABLE `lookuptypes` ENABLE KEYS */;
 
 
@@ -118,7 +117,6 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `pageId` int(11) NOT NULL AUTO_INCREMENT,
   `categoryId` int(11) NOT NULL DEFAULT '0',
   `typeId` int(11) NOT NULL DEFAULT '0',
-  `subTypeId` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
   `subtitle` varchar(255) NOT NULL,
   `body` longtext NOT NULL,
@@ -129,10 +127,13 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `lastUpdatedOn` datetime DEFAULT NULL,
   `lastUpdatedBy` int(11) DEFAULT NULL,
   PRIMARY KEY (`pageId`)
-) ENGINE=MyISAM DEFAULT CHARSET=greek;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=greek;
 
 -- Dumping data for table bgcms.pages: 0 rows
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` (`pageId`, `categoryId`, `typeId`, `title`, `subtitle`, `body`, `price`, `quantity`, `createdOn`, `createdBy`, `lastUpdatedOn`, `lastUpdatedBy`) VALUES
+	(1, 0, 31, 'Home Page', 'Home page subtitle', 'Home page content', 0, 0, NULL, 1, NULL, 1),
+	(2, 0, 32, 'Contact Page', 'Contact page subtitle', 'Contact page content', 0, 0, NULL, 1, NULL, 1);
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 
 
@@ -147,9 +148,10 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=greek;
 
--- Dumping data for table bgcms.sessions: ~1 rows (approximately)
+-- Dumping data for table bgcms.sessions: ~2 rows (approximately)
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
 INSERT INTO `sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+	('3dfaf6b8117a5cc79b46e306cc4057ee', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36', 1402927039, ''),
 	('bcb823d9d49db7c9ee8df5f245a3348a', '::1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36', 1402922973, '');
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
