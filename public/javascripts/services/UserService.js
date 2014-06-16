@@ -2,11 +2,12 @@ CMS.factory("$user", ['$rootScope','$localizer', function($rootScope, $localizer
         
         //$rootScope.isLoggedIn = parseInt($("#ApplicationLoggedIn").val());
         //$rootScope.isAdmin = parseInt($("#ApplicationIsAdmin").val());
-        $rootScope.userInfo = {
+        /*$rootScope.userInfo = {
             loggedIn : parseInt($("#ApplicationLoggedIn").val()),
             isAdmin : parseInt($("#ApplicationIsAdmin").val())
-        };
-        
+        };*/
+        $rootScope.userInfo = JSON.parse($("#ApplicationUserInfo").val());
+        console.log($rootScope);
         return {
             SetLocale: function(langId){
                 $rootScope.langId = langId;

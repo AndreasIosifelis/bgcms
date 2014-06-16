@@ -7,9 +7,12 @@ class Site extends MZ_Controller {
 
 
     public function index() {
-        $data["sessionId"] = $this->session->userdata("session_id");
-        $data["loggedIn"] = $this->session->userdata("logged_in");
-        $data["isAdmin"] = $this->session->userdata("is_admin");
+        $data["userInfo"]["sessionId"] = $this->session->userdata("session_id");
+        $data["userInfo"]["loggedIn"] = $this->session->userdata("logged_in");
+        $data["userInfo"]["isAdmin"] = $this->session->userdata("is_admin");
+        $data["userInfo"]["isEditor"] = $this->session->userdata("is_editor");
+        $data["userInfo"]["isAuthor"] = $this->session->userdata("is_author");
+        $data["userInfo"]["isCustomer"] = $this->session->userdata("is_customer");
         $this->load->view('site_view', $data);
     }
     
